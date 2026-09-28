@@ -88,7 +88,7 @@ Each controller has the standard CRUD set (`get all`, `create`, `update`, `delet
 |---|---|---|
 | GET | `/getAvgRating/{id}` | Average rating for a user (as reviewee) |
 
-A full, detailed breakdown of every endpoint — including request/response shapes and every possible "bad request" case with its exact message — is available in [`PackUp_API_Endpoint_Reference.pdf`](./PackUp_API_Endpoint_Reference.pdf) (also provided as an editable `.docx`).
+A full, detailed breakdown of every endpoint — including request/response shapes and every possible "bad request" case with its exact message — is available in [`PackUp_API_Endpoint_Reference.pdf`](./PackUp_API_Endpoint_Reference.pdf).
 
 ## Project Structure (high level)
 
