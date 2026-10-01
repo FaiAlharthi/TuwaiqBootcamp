@@ -21,8 +21,8 @@ public class TeacherService {
 
     public void createTeacher(Teacher teacher){
         Teacher teacher1 = teacherRepository.findTeacherById(teacher.getId());
-        if(teacher1 == null){
-            throw new ApiException("no customer found");
+        if(teacher1 != null){
+            throw new ApiException("no teacher found");
         }
         teacherRepository.save(teacher1);
     }
@@ -30,7 +30,7 @@ public class TeacherService {
     public void updateTeacher( Integer id,Teacher teacher){
         Teacher teacher1 = teacherRepository.findTeacherById(id);
         if(teacher1 == null){
-            throw new ApiException("no customer found");
+            throw new ApiException("no teacher found");
         }
         teacher1.setName(teacher.getName());
         teacher1.setEmail(teacher.getEmail());
@@ -43,8 +43,17 @@ public class TeacherService {
     public void deleteTeacher(Integer id){
         Teacher teacher = teacherRepository.findTeacherById(id);
         if(teacher == null){
-            throw new ApiException("no customer found");
+            throw new ApiException("no teacher found");
         }
         teacherRepository.delete(teacher);
+    }
+
+    //last endpoint
+    public Teacher getTeacherInfo(Integer id){
+        Teacher teacher = teacherRepository.findTeacherById(id);
+        if(teacher == null){
+            throw new ApiException("no teacher found");
+        }
+        return teacher;
     }
 }
